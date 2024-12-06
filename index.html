@@ -92,10 +92,18 @@
           gap: 20px;
           justify-content: space-between;
           width: 100%;
+          pedding: 0 20px;
         }
-    
+
+        .recent h4{
+            font-size: 17px;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: left;
+            margin-left: 5%
+        }
         .gallery-item {
-          width: calc(50% - 10px); /* 두 개씩 배치, 모바일에서 2줄 */
+          width: calc(50% - 20px); /* 두 개씩 배치, 모바일에서 2줄 */
           height: auto;
           margin-bottom: 20px;
         }
@@ -111,7 +119,7 @@
           font-size: 14px;
           color: #666;
           margin-top: 10px;
-          text-align: center;
+          text-align: left;
         }
     
         /* FAVS 영역 스타일 */
@@ -216,7 +224,7 @@
 
   <!-- RECENT 영역 -->
   <div class="gallery-container recent-gallery" id="recent">
-    <h4>Tell 'em girls, where I'am at...</h4>
+    <h4>Tell 'em girls, where I'm at...</h4>
     <div class="gallery-item">
       <img src="231203.jpg" alt="Photo 231203" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
       <div class="date-time">DEC 3, 2023</div>
