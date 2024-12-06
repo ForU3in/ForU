@@ -6,180 +6,196 @@
     <title>For U's Archive</title>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      /* 기본 스타일 설정 */
-      body {
-        font-family: 'Nanum Gothic', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 20px;
-      }
-      
-      /* 프로필 */
-      .profile {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #ddd;
-        width: 90%;
-        max-width: 1200px;
-      }
-      
-      .profile img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        margin-right: 20px;
-      }
-      
-      .profile .info {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .profile .info h2 {
-        margin: 0;
-        font-size: 24px;
-      }
-      
-      .profile .info p {
-        font-size: 16px;
-        color: #888;
-      }
-      
-      /* 메뉴 영역 */
-      .menu {
-        display: flex;
-        justify-content: space-around;
-        width: 90%;
-        max-width: 1200px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid #ddd;
-      }
-      
-      .menu a {
-        text-decoration: none;
-        font-size: 18px;
-        color: #333;
-        padding: 10px;
-        flex-grow: 1;
-        text-align: center;
-      }
-      
-      .menu a:hover {
-        background-color: #f1f1f1;
-      }
-      
-      /* RECENT, FAVS, ABOUT 영역 */
-      .gallery-container {
-        width: 90%;
-        max-width: 1200px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
-      
-      /* RECENT 영역 스타일 */
-      .recent-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: space-between;
-        width: 100%;
-      }
-      
-      .gallery-item {
-        width: calc(50% - 10px); /* 두 개씩 배치, 모바일에서 2줄 */
-        height: auto;
-        margin-bottom: 20px;
-        box-sizing: border-box; /* 패딩과 마진을 포함한 크기 계산 */
-      }
-      
-      .gallery-item img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-      
-      .date-time {
-        font-size: 14px;
-        color: #666;
-        margin-top: 10px;
-        text-align: center;
-      }
-      
-      /* FAVS 영역 스타일 */
-      .favs-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px; /* 간격을 줄여서 사진들이 너무 멀어지지 않도록 */
-        justify-content: space-between;
-        width: 100%;
-        padding: 0 10px; /* 양 옆 여백 추가 */
-        box-sizing: border-box; /* padding이 포함된 크기 계산 */
-      }
-      
-      .favs h3 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        width: 100%;
-        text-align: left;
-        margin-left: 5%;
-      }
-      
-      .favs-gallery .gallery-item {
-        width: calc(50% - 10px); /* 모바일과 PC에서 적당히 간격을 두고 배치 */
-        margin-bottom: 20px;
-      }
-      
-      /* ABOUT 영역 스타일 */
-      .about {
-        padding: 20px;
-        text-align: left;
-        width: 90%;
-        max-width: 1200px;
-      }
-      
-      .about h3 {
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
-      
-      .about p {
-        font-size: 16px;
-        color: #333;
-      }
-      
-      .about a {
-        color: #3498db;
-        text-decoration: none;
-      }
-      
-      .about a:hover {
-        text-decoration: underline;
-      }
-      
-      /* 반응형 디자인 */
-      @media (max-width: 768px) {
-        .gallery-item {
-          width: calc(50% - 10px); /* 모바일에서 두 개씩 배치 */
+        /* 기본 스타일 설정 */
+        body {
+          font-family: 'Nanum Gothic', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f0f0f0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 20px;
         }
-      }
-      
-      @media (max-width: 480px) {
-        .gallery-item {
-          width: calc(50% - 10px); /* 작은 모바일 화면에서도 두 개씩 배치 */
+    
+        /* 프로필 */
+        .profile {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #ddd;
+          width: 90%;
+          max-width: 1200px;
         }
-      }
-    </style>
-</head> 
+    
+        .profile img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          margin-right: 20px;
+        }
+    
+        .profile .info {
+          display: flex;
+          flex-direction: column;
+        }
+    
+        .profile .info h2 {
+          margin: 0;
+          font-size: 24px;
+        }
+    
+        .profile .info p {
+          font-size: 16px;
+          color: #888;
+        }
+    
+        /* 메뉴 영역 */
+        .menu {
+          display: flex;
+          justify-content: space-around;
+          width: 90%;
+          max-width: 1200px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #ddd;
+        }
+    
+        .menu a {
+          text-decoration: none;
+          font-size: 18px;
+          color: #333;
+          padding: 10px;
+          flex-grow: 1;
+          text-align: center;
+        }
+    
+        .menu a:hover {
+          background-color: #f1f1f1;
+        }
+    
+        /* RECENT, FAVS, ABOUT 영역 */
+        .gallery-container {
+          width: 90%;
+          max-width: 1200px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: space-between;
+          margin-bottom: 20px;
+        }
+    
+        /* RECENT 영역 스타일 */
+        .recent-gallery {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: space-between;
+          width: 100%;
+        }
+    
+        .gallery-item {
+          width: calc(50% - 10px); /* 두 개씩 배치, 모바일에서 2줄 */
+          height: auto;
+          margin-bottom: 20px;
+        }
+    
+        .gallery-item img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+    
+        .date-time {
+          font-size: 14px;
+          color: #666;
+          margin-top: 10px;
+          text-align: center;
+        }
+    
+        /* FAVS 영역 스타일 */
+        .favs-gallery {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: space-between;
+          width: 100%;
+          padding: 0 20px; /* 양옆에 여백 추가 */
+        }
+    
+        .favs h3 {
+          font-size: 24px;
+          margin-bottom: 20px;
+          width: 100%;
+          text-align: left;
+          margin-left: 5%;
+        }
+    
+        .favs-gallery .gallery-item {
+          width: calc(50% - 20px); /* 모바일과 PC에서 적당히 간격을 두고 배치 */
+          margin-bottom: 20px;
+        }
+    
+        /* ABOUT 영역 스타일 */
+        .about {
+          padding: 20px;
+          text-align: left;
+          width: 90%;
+          max-width: 1200px;
+        }
+    
+        .about h3 {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+
+        .about h4 {
+          font-size: 17px;
+          margin-bottom: 10px;
+        }
+    
+        .about p {
+          font-size: 16px;
+          color: #333;
+        }
+    
+        .about a {
+          color: #3498db;
+          text-decoration: none;
+        }
+    
+        .about a:hover {
+          text-decoration: underline;
+        }
+    
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+          .gallery-item {
+            width: calc(50% - 10px); /* 모바일에서 두 개씩 배치 (각 줄에 두 개씩) */
+          }
+        }
+    
+        @media (max-width: 480px) {
+          .gallery-item {
+            width: calc(50% - 10px); /* 작은 모바일 화면에서도 두 개씩 배치 */
+          }
+        }
+    
+        /* 오른쪽 클릭 방지 및 이미지 저장 방지 스타일 */
+        img {
+          pointer-events: none; /* 이미지 클릭 방지 */
+        }
+    
+        /* 텍스트 및 이미지 선택 방지 */
+        body {
+          -webkit-user-select: none;  /* Safari */
+          -moz-user-select: none;     /* Firefox */
+          -ms-user-select: none;      /* IE */
+          user-select: none;          /* Chrome, Edge */
+        }
+      </style>
+    </head>      
 <body>
 
   <!-- 프로필 -->
@@ -199,105 +215,62 @@
   </div>
 
   <!-- RECENT 영역 -->
-<div class="gallery-container recent-gallery" id="recent">
-  <div class="gallery-item">
-    <img src="231203.jpg" alt="Photo 231203" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">DEC 3, 2023</div>
+  <div class="gallery-container recent-gallery" id="recent">
+    <h4>Tell 'em girls, where I'am at...</h4>
+    <div class="gallery-item">
+      <img src="231203.jpg" alt="Photo 231203" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">DEC 3, 2023</div>
+    </div>
+    <div class="gallery-item">
+      <img src="230429.jpg" alt="Photo 230429" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">APR 29, 2023</div>
+    </div>
+    <div class="gallery-item">
+      <img src="0111.jpg" alt="Photo 0111" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">JAN 11, 2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="0310.jpg" alt="Photo 0310" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">MAR 10, 2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="0317.jpg" alt="Photo 0317" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">MAR 17, 2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="03172.jpg" alt="Photo 03172" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">MAR 17, 2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="0331.jpg" alt="Photo 0331" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">MAR 31, 2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="0502.jpg" alt="Photo 0502" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">MAY 2, 2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="0503.jpg" alt="Photo 0503" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">MAY 3, 2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="0522.jpg" alt="Photo 0522" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
+      <div class="date-time">MAY 22, 2024</div>
+    </div>
   </div>
-  <div class="gallery-item">
-    <img src="230429.jpg" alt="Photo 230429" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">APR 29, 2023</div>
-  </div>
-  <div class="gallery-item">
-    <img src="0111.jpg" alt="Photo 0111" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">JAN 11, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="0310.jpg" alt="Photo 0310" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">MAR 10, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="0317.jpg" alt="Photo 0317" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">MAR 17, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="03172.jpg" alt="Photo 03172" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">MAR 17, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="0331.jpg" alt="Photo 0331" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">MAR 31, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="0502.jpg" alt="Photo 0502" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">MAY 2, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="0503.jpg" alt="Photo 0503" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">MAY 3, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="0522.jpg" alt="Photo 0522" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">MAY 22, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="0609.jpg" alt="Photo 0609" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">JUN 9, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="0629.jpg" alt="Photo 0629" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">JUN 29, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="06292.jpg" alt="Photo 06292" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">JUN 29, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="1.jpg" alt="Photo 1" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">AUG 17, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="1017.jpg" alt="Photo 1017" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">OCT 17, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="2.jpg" alt="Photo 2" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">NOV 21, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="3.jpg" alt="Photo 3" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">NOV 24, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="4.jpg" alt="Photo 4" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">DEC 1, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="5.jpg" alt="Photo 5" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">DEC 5, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="6.jpg" alt="Photo 6" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">DEC 6, 2024</div>
-  </div>
-  <div class="gallery-item">
-    <img src="7.jpg" alt="Photo 7" loading="lazy" onload="this.style.opacity=1;" class="lazy-load">
-    <div class="date-time">DEC 7, 2024</div>
-  </div>
-</div>
 
   <!-- FAVS 영역 -->
   <div class="favs" id="favs">
     <h3>My Pick</h3>
-    <div class="gallery-container favs-gallery">
+    <div class="favs-gallery">
       <div class="gallery-item">
-      <img src="0629.jpg" alt="Photo 0629">
-      <div class="date-time">JUN 29, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
-    </div>
+        <img src="0629.jpg" alt="Photo 0629">
+        <div class="date-time">JUN 29, 2024</div>
+      </div>
       <div class="gallery-item">
-      <img src="1017.jpg" alt="Photo 1017">
-      <div class="date-time">OCT 17, 2024</div>
-    </div>
+        <img src="1017.jpg" alt="Photo 1017">
+        <div class="date-time">OCT 17, 2024</div>
+      </div>
       <div class="gallery-item">
         <img src="5.jpg" alt="Fav Photo 5">
         <div class="date-time">DEC 5, 2024</div>
@@ -312,7 +285,7 @@
   <!-- ABOUT 영역 -->
   <div class="about" id="about">
     <h3>ABOUT</h3>
-    <p>More love... <a href="https://www.instagram.com/by.yxxnim1?igsh=dG5hZjducjkwbmR6">@by.yxunim1</a></p>
+    <p>Welcome to For U's Archive.<br>This is a collection of cherished moments and memories.<br>Dive into the... <a href="https://www.instagram.com/by.yxxnim1?igsh=dG5hZjducjkwbmR6">@by.yxunim1</a></p>
   </div>
 
   <script>
@@ -325,10 +298,18 @@
       // 클릭한 섹션만 보이기
       document.getElementById(section).style.display = 'block';
     }
-
     // 초기 화면에서는 RECENT가 보이도록 설정
     showSection('recent');
-  </script>
+    
+    // 오른쪽 클릭 방지
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault();  // 오른쪽 클릭 방지
+    });
 
+    // 드래그 방지
+    document.addEventListener("dragstart", function(event) {
+      event.preventDefault();  // 드래그 방지
+    });
+  </script>
 </body>
 </html>
