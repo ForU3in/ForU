@@ -1,196 +1,221 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For U's Archive</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* 기본 스타일 설정 */
-        body {
-          font-family: 'Nanum Gothic', sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f0f0f0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding-top: 20px;
-        }
-    
-        /* 프로필 */
-        .profile {
-          display: flex;
-          align-items: center;
-          margin-bottom: 20px;
-          padding-bottom: 20px;
-          border-bottom: 1px solid #ddd;
-          width: 90%;
-          max-width: 1200px;
-        }
-    
-        .profile img {
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          margin-right: 20px;
-        }
-    
-        .profile .info {
-          display: flex;
-          flex-direction: column;
-        }
-    
-        .profile .info h2 {
-          margin: 0;
-          font-size: 24px;
-        }
-    
-        .profile .info p {
-          font-size: 16px;
-          color: #888;
-        }
-    
-        /* 메뉴 영역 */
-        .menu {
-          display: flex;
-          justify-content: space-around;
-          width: 90%;
-          max-width: 1200px;
-          margin-bottom: 20px;
-          border-bottom: 1px solid #ddd;
-        }
-    
-        .menu a {
-          text-decoration: none;
-          font-size: 18px;
-          color: #333;
-          padding: 10px;
-          flex-grow: 1;
-          text-align: center;
-        }
-    
-        .menu a:hover {
-          background-color: #f1f1f1;
-        }
-    
-        /* RECENT, FAVS, ABOUT 영역 */
-        .gallery-container {
-          width: 90%;
-          max-width: 1200px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          justify-content: space-between;
-          margin-bottom: 20px;
-        }
-    
-        /* RECENT 영역 스타일 */
-        .recent-gallery {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          justify-content: space-between;
-          width: 100%;
-          pedding: 0 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For U's Archive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 기본 스타일 설정 */
+    body {
+      font-family: 'Nanum Gothic', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
 
-        .recent h4 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            width: 100%;
-            text-align: left;
-            margin-left: 5%
-        }
+    /* 프로필 */
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .profile .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile .info h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .profile .info p {
+      font-size: 16px;
+      color: #888;
+    }
+
+    /* 메뉴 영역 */
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      width: 90%;
+      max-width: 1200px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #333;
+      padding: 10px;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .menu a:hover {
+      background-color: #f1f1f1;
+    }
+
+  /* RECENT, FAVS, ABOUT 영역 */
+  .gallery-container {
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    /* RECENT 영역 스타일 */
+    .recent-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 20px; /* 양옆에 여백 추가 */
+    }
+
+    .recent h4 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: left;
+      margin-left: 5%;
+    }
+
+    .recent-gallery .gallery-item {
+      width: calc(50% - 18px);
+      margin-bottom: 20px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .date-time {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    /* FAVS 영역 스타일 */
+    .favs-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 20px; /* 양옆에 여백 추가 */
+    }
+    
+    .favs h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: left;
+      margin-left: 5%;
+    }
+    
+    .favs-gallery .gallery-item {
+      width: calc(50% - 20px); /* 모바일과 PC에서 적당히 간격을 두고 배치 */
+      margin-bottom: 20px;
+    }
+    
+    /* ABOUT 영역 스타일 */
+    .about {
+      padding: 20px;
+      text-align: left;
+      width: 90%;
+      max-width: 1200px;
+    }
+    
+    .about h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
         
-        .recent-gallery .gallery-item {
-          width: calc(50% - 20px); /* 두 개씩 배치, 모바일에서 2줄 */
-          margin-bottom: 20px;
-        }    
-        .date-time {
-          font-size: 14px;
-          color: #666;
-          margin-top: 10px;
-          text-align: left;
-        }
+    .about p {
+      font-size: 16px;
+      color: #333;
+    }
     
-        /* FAVS 영역 스타일 */
-        .favs-gallery {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          justify-content: space-between;
-          width: 100%;
-          padding: 0 20px; /* 양옆에 여백 추가 */
-        }
+    .about a {
+      color: #3498db;
+      text-decoration: none;
+    }
     
-        .favs h3 {
-          font-size: 24px;
-          margin-bottom: 20px;
-          width: 100%;
-          text-align: left;
-          margin-left: 5%;
-        }
-    
-        .favs-gallery .gallery-item {
-          width: calc(50% - 20px); /* 모바일과 PC에서 적당히 간격을 두고 배치 */
-          margin-bottom: 20px;
-        }
-    
-        /* ABOUT 영역 스타일 */
-        .about {
-          padding: 20px;
-          text-align: left;
-          width: 90%;
-          max-width: 1200px;
-        }
-    
-        .about h3 {
-          font-size: 20px;
-          margin-bottom: 10px;
-        }
-        
-        .about p {
-          font-size: 16px;
-          color: #333;
-        }
-    
-        .about a {
-          color: #3498db;
-          text-decoration: none;
-        }
-    
-        .about a:hover {
-          text-decoration: underline;
-        }
-    
-        /* 반응형 디자인 */
-        @media (max-width: 768px) {
-          .gallery-item {
-            width: calc(50% - 10px); /* 모바일에서 두 개씩 배치 (각 줄에 두 개씩) */
-          }
-        }
-    
-        @media (max-width: 480px) {
-          .gallery-item {
-            width: calc(50% - 10px); /* 작은 모바일 화면에서도 두 개씩 배치 */
-          }
-        }
-    
-        /* 오른쪽 클릭 방지 및 이미지 저장 방지 스타일 */
-        img {
-          pointer-events: none; /* 이미지 클릭 방지 */
-        }
-    
-        /* 텍스트 및 이미지 선택 방지 */
-        body {
-          -webkit-user-select: none;  /* Safari */
-          -moz-user-select: none;     /* Firefox */
-          -ms-user-select: none;      /* IE */
-          user-select: none;          /* Chrome, Edge */
-        }
-      </style>
-    </head>      
+    .about a:hover {
+      text-decoration: underline;
+    }
+
+    /* 반응형 디자인: 화면 크기가 768px 이하일 때 */
+    @media (max-width: 768px) {
+      .recent-gallery .gallery-item {
+        width: calc(50% - 15px); /* 모바일에서 두 개씩 배치 (각 줄에 두 개씩) */
+      }
+      .favs-gallery .gallery-item {
+        width: calc(50% - 15px);
+      }
+    }
+
+    /* 작은 모바일 화면에서 이미지 크기 조정 */
+    @media (max-width: 480px) {
+      .recent-gallery .gallery-item,
+      .favs-gallery .gallery-item {
+        width: calc(50% - 15px); /* 화면 크기가 작을 때 한 줄로 이미지 표시 */
+      }
+    }
+
+    /* about 섹션 텍스트 왼쪽 정렬 */
+    .about-text {
+      text-align: left;
+      width: 100%;
+      margin: 20px 0;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #333;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      pointer-events: none;
+    }
+
+    /* 텍스트 및 이미지 선택 방지 */
+    body {
+      -webkit-user-select: none;  /* Safari */
+      -moz-user-select: none;     /* Firefox */
+      -ms-user-select: none;      /* IE */
+      user-select: none;          /* Chrome, Edge */
+    }
+  </style>
+</head>    
 <body>
 
   <!-- 프로필 -->
@@ -289,21 +314,14 @@
       document.getElementById('recent').style.display = 'none';
       document.getElementById('favs').style.display = 'none';
       document.getElementById('about').style.display = 'none';
-      
-      // 클릭한 섹션만 보이기
       document.getElementById(section).style.display = 'block';
     }
-    // 초기 화면에서는 RECENT가 보이도록 설정
     showSection('recent');
-    
-    // 오른쪽 클릭 방지
     document.addEventListener("contextmenu", function(event) {
-      event.preventDefault();  // 오른쪽 클릭 방지
+      event.preventDefault();
     });
-
-    // 드래그 방지
     document.addEventListener("dragstart", function(event) {
-      event.preventDefault();  // 드래그 방지
+      event.preventDefault();
     });
   </script>
 </body>
