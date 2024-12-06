@@ -85,7 +85,7 @@
 
     /* RECENT는 두 줄로 */
     .recent-gallery {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 두 줄로 표시 */
+      grid-template-columns: repeat(auto-fill, minmax(300px, 2fr)); /* 두 줄로 표시 */
     }
 
     /* FAVS는 한 줄로 */
@@ -114,22 +114,21 @@
     /* FAVS 및 ABOUT 영역을 구분 */
     .favs, .about {
       padding: 20px;
-      display: none; /* 처음엔 숨김 */
+      display: none;
     }
 
     /* 반응형 디자인 */
     @media (max-width: 768px) {
       .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 모바일에서도 사진 크기 맞춰서 두 줄로 배치 */
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       }
     }
 
     @media (max-width: 480px) {
       .gallery-container {
-        grid-template-columns: 1fr; /* 모바일 화면에서 한 줄에 한 개씩 사진 배치 */
+        grid-template-columns: 1fr;
       }
 
-      /* 모바일 메뉴 가로로 나열되도록 수정 */
       .menu {
         flex-direction: row;
       }
@@ -161,38 +160,37 @@
 
   <!-- RECENT 영역 -->
   <div class="gallery-container recent-gallery" id="recent">
-    <!-- 사진 갤러리 항목 -->
     <div class="gallery-item">
       <img src="1.jpg" alt="Photo 1">
-      <div class="date-time">MAR 16, 2015</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+      <div class="date-time">AUG 16, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
     </div>
     <div class="gallery-item">
       <img src="2.jpg" alt="Photo 2">
-      <div class="date-time">MAR 17, 2015</div>
+      <div class="date-time">NOV 21, 2024</div>
     </div>
     <div class="gallery-item">
       <img src="3.jpg" alt="Photo 3">
-      <div class="date-time">MAR 18, 2015</div>
+      <div class="date-time">NOV 24, 2024</div>
     </div>
     <div class="gallery-item">
       <img src="4.jpg" alt="Photo 4">
-      <div class="date-time">MAR 19, 2015</div>
+      <div class="date-time">DEC 1, 2024</div>
     </div>
     <div class="gallery-item">
         <img src="5.jpg" alt="Photo 5">
-        <div class="date-time">MAR 19, 2015</div>
+        <div class="date-time">DEC 5, 2024</div>
     </div>
     <div class="gallery-item">
         <img src="6.jpg" alt="Photo 6">
-        <div class="date-time">MAR 19, 2015</div>
+        <div class="date-time">DEC 6, 2024</div>
     </div>
     <div class="gallery-item">
         <img src="7.jpg" alt="Photo 7">
-        <div class="date-time">MAR 19, 2015</div>
+        <div class="date-time">DEC 6, 2024</div>
     </div>
     <div class="gallery-item">
         <img src="8.jpg" alt="Photo 8">
-        <div class="date-time">MAR 19, 2015</div>
+        <div class="date-time">DEC 7, 2024</div>
     </div>
   </div>
 
@@ -202,11 +200,11 @@
     <div class="gallery-container favs-gallery">
       <div class="gallery-item">
         <img src="5.jpg" alt="Fav Photo 5">
-        <div class="date-time">MAR 16, 2015</div>
+        <div class="date-time">DEC 5, 2024</div>
       </div>
       <div class="gallery-item">
         <img src="6.jpg" alt="Fav Photo 6">
-        <div class="date-time">MAR 18, 2015</div>
+        <div class="date-time">DEC 6, 2024</div>
       </div>
     </div>
   </div>
@@ -214,23 +212,18 @@
   <!-- ABOUT 영역 -->
   <div class="about" id="about">
     <h3>ABOUT</h3>
-    <p>Love more... <a href="https://www.instagram.com/by.yxxnim1?igsh=dG5hZjducjkwbmR6">@by.yxunim1</a></p>
+    <p>More love... <a href="https://www.instagram.com/by.yxxnim1?igsh=dG5hZjducjkwbmR6">@by.yxunim1</a></p>
   </div>
 
   <script>
-    // 기본적으로 RECENT 영역만 보이도록 설정
     document.getElementById("recent").style.display = "block";
     document.getElementById("favs").style.display = "none";
     document.getElementById("about").style.display = "none";
 
-    // 메뉴 클릭 시 해당 영역 보이기
     function showSection(section) {
-      // 모든 영역 숨기기
       document.getElementById("recent").style.display = "none";
       document.getElementById("favs").style.display = "none";
       document.getElementById("about").style.display = "none";
-
-      // 클릭된 영역만 보이도록 설정
       document.getElementById(section).style.display = "block";
     }
   </script>
