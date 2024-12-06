@@ -83,14 +83,9 @@
     margin-bottom: 20px;
   }
 
-  /* RECENT는 두 줄로 */
-  .recent-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 화면 크기에 맞춰 2열로 표시 */
-  }
-
-  /* FAVS는 한 줄로 */
-  .favs-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 한 줄로 표시 */
+  /* RECENT, FAVS 모두 두 줄로 표시 */
+  .recent-gallery, .favs-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* 각 항목의 최소 너비를 220px로 설정 */
   }
 
   .gallery-item {
@@ -132,7 +127,7 @@
   /* 반응형 디자인 */
   @media (max-width: 768px) {
     .gallery-container {
-      grid-template-columns: repeat(2, minmax(150px, 1fr)); /* 두 줄로 표시, 각 이미지를 더 작게 표시 */
+      grid-template-columns: repeat(2, minmax(160px, 1fr)); /* 두 줄로 표시, 이미지 크기 더 작게 */
     }
 
     .gallery-item img {
@@ -154,7 +149,7 @@
       padding: 15px;
     }
   }
-  </style>
+</style>
 </head>
 <body>
 
