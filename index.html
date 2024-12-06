@@ -1,156 +1,185 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For U's Archive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-  /* 기본 스타일 설정 */
-  body {
-    font-family: 'Nanum Gothic', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-  }
-
-  /* 프로필 */
-  .profile {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd; /* 구분선 */
-    width: 80%;
-    max-width: 1200px;
-  }
-
-  .profile img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-
-  .profile .info {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .profile .info h2 {
-    margin: 0;
-    font-size: 24px;
-  }
-
-  .profile .info p {
-    font-size: 16px;
-    color: #888;
-  }
-
-  /* 메뉴 영역 */
-  .menu {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    max-width: 1200px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .menu a {
-    text-decoration: none;
-    font-size: 18px;
-    color: #333;
-    padding: 10px;
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .menu a:hover {
-    background-color: #f1f1f1;
-  }
-
-  /* RECENT, FAVS, ABOUT 영역 */
-  .gallery-container {
-    width: 80%;
-    max-width: 1200px;
-    display: grid;
-    gap: 20px; /* 사진 간 간격 */
-    margin-bottom: 20px;
-  }
-
-  /* RECENT, FAVS 모두 두 줄로 표시 */
-  .recent-gallery, .favs-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* 각 항목의 최소 너비를 220px로 설정 */
-  }
-
-  .gallery-item {
-    position: relative;
-    margin-bottom: 20px;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  /* 사진 날짜 */
-  .date-time {
-    font-size: 14px;
-    color: #666;
-    margin-top: 10px;
-  }
-
-  /* ABOUT 영역 스타일 */
-  .about {
-    padding: 20px;
-    text-align: left; /* 왼쪽 정렬 추가 */
-    width: 80%;
-    max-width: 1200px;
-  }
-
-  .about h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .about p {
-    font-size: 16px;
-    color: #333;
-  }
-
-  /* 반응형 디자인 */
-  @media (max-width: 768px) {
-    .gallery-container {
-      grid-template-columns: repeat(2, minmax(160px, 1fr)); /* 두 줄로 표시, 이미지 크기 더 작게 */
-    }
-
-    .gallery-item img {
-      width: 100%;  /* 이미지를 화면 크기에 맞게 축소 */
-      height: auto;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .gallery-container {
-      grid-template-columns: repeat(2, minmax(120px, 1fr)); /* 더 작은 화면에서는 두 줄로 표시 */
-    }
-
-    .menu {
-      flex-direction: row;
-    }
-
-    .menu a {
-      padding: 15px;
-    }
-  }
-</style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For U's Archive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* 기본 스타일 설정 */
+      body {
+        font-family: 'Nanum Gothic', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+      }
+      
+      /* 프로필 */
+      .profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        width: 90%;
+        max-width: 1200px;
+      }
+      
+      .profile img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+      
+      .profile .info {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .profile .info h2 {
+        margin: 0;
+        font-size: 24px;
+      }
+      
+      .profile .info p {
+        font-size: 16px;
+        color: #888;
+      }
+      
+      /* 메뉴 영역 */
+      .menu {
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+        max-width: 1200px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      .menu a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #333;
+        padding: 10px;
+        flex-grow: 1;
+        text-align: center;
+      }
+      
+      .menu a:hover {
+        background-color: #f1f1f1;
+      }
+      
+      /* RECENT, FAVS, ABOUT 영역 */
+      .gallery-container {
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      
+      /* RECENT 영역 스타일 */
+      .recent-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        width: 100%;
+      }
+      
+      .gallery-item {
+        width: calc(50% - 10px); /* 두 개씩 배치, 모바일에서 2줄 */
+        height: auto;
+        margin-bottom: 20px;
+        box-sizing: border-box; /* 패딩과 마진을 포함한 크기 계산 */
+      }
+      
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      
+      .date-time {
+        font-size: 14px;
+        color: #666;
+        margin-top: 10px;
+        text-align: center;
+      }
+      
+      /* FAVS 영역 스타일 */
+      .favs-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* 간격을 줄여서 사진들이 너무 멀어지지 않도록 */
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 10px; /* 양 옆 여백 추가 */
+        box-sizing: border-box; /* padding이 포함된 크기 계산 */
+      }
+      
+      .favs h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: left;
+        margin-left: 5%;
+      }
+      
+      .favs-gallery .gallery-item {
+        width: calc(50% - 10px); /* 모바일과 PC에서 적당히 간격을 두고 배치 */
+        margin-bottom: 20px;
+      }
+      
+      /* ABOUT 영역 스타일 */
+      .about {
+        padding: 20px;
+        text-align: left;
+        width: 90%;
+        max-width: 1200px;
+      }
+      
+      .about h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      
+      .about p {
+        font-size: 16px;
+        color: #333;
+      }
+      
+      .about a {
+        color: #3498db;
+        text-decoration: none;
+      }
+      
+      .about a:hover {
+        text-decoration: underline;
+      }
+      
+      /* 반응형 디자인 */
+      @media (max-width: 768px) {
+        .gallery-item {
+          width: calc(50% - 10px); /* 모바일에서 두 개씩 배치 */
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .gallery-item {
+          width: calc(50% - 10px); /* 작은 모바일 화면에서도 두 개씩 배치 */
+        }
+      }
+    </style>
+</head> 
 <body>
 
   <!-- 프로필 -->
