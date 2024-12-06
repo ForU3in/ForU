@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For U's Archive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 기본 스타일 설정 */
+    body {
+      font-family: 'Nanum Gothic', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+
+    /* 프로필 */
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd; /* 구분선 */
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    .profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .profile .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile .info h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .profile .info p {
+      font-size: 16px;
+      color: #888;
+    }
+
+    /* 메뉴 영역 */
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+      max-width: 1200px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #333;
+      padding: 10px;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .menu a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* RECENT, FAVS, ABOUT 영역 */
+    .gallery-container {
+      width: 80%;
+      max-width: 1200px;
+      display: grid;
+      gap: 20px; /* 사진 간 간격 */
+      margin-bottom: 20px;
+    }
+
+    /* RECENT는 두 줄로 */
+    .recent-gallery {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 2fr)); /* 두 줄로 표시 */
+    }
+
+    /* FAVS는 한 줄로 */
+    .favs-gallery {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 한 줄로 표시 */
+    }
+
+    .gallery-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* 사진 날짜 */
+    .date-time {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    /* FAVS 및 ABOUT 영역을 구분 */
+    .favs, .about {
+      padding: 20px;
+      display: none;
+    }
+
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .gallery-container {
+        grid-template-columns: repeat(2, minmax(150px, 1fr)); /* 두 줄로 표시, 이미지 크기 더 작게 */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-container {
+        grid-template-columns: repeat(2, minmax(120px, 1fr)); /* 480px 이하에서는 두 줄로 표시, 더 작은 크기 */
+      }
+
+      .menu {
+        flex-direction: row;
+      }
+
+      .menu a {
+        padding: 15px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 프로필 -->
+  <div class="profile">
+    <img src="profile.jpg" alt="Profile Picture"> <!-- 프로필 사진 -->
+    <div class="info">
+      <h2>For U</h2>
+      <p>Love leaves... @yxunim1</p>
+    </div>
+  </div>
+
+  <!-- 메뉴 -->
+  <div class="menu">
+    <a href="javascript:void(0);" onclick="showSection('recent')">RECENT</a>
+    <a href="javascript:void(0);" onclick="showSection('favs')">FAVS</a>
+    <a href="javascript:void(0);" onclick="showSection('about')">ABOUT</a>
+  </div>
+
+  <!-- RECENT 영역 -->
+  <div class="gallery-container recent-gallery" id="recent">
+    <div class="gallery-item">
+      <img src="231203.jpg" alt="Photo 231203">
+      <div class="date-time">DEC 03, 2023</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="230429.jpg" alt="Photo 230429">
+      <div class="date-time">APR 29, 2023</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="0111.jpg" alt="Photo 0111">
+      <div class="date-time">JAN 11, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="0310.jpg" alt="Photo 0310">
+      <div class="date-time">MAR 10, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="0317.jpg" alt="Photo 0317">
+      <div class="date-time">MAR 17, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="03172.jpg" alt="Photo 03172">
+      <div class="date-time">MAR 17, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="0331.jpg" alt="Photo 0331">
+      <div class="date-time">MAR 31, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="0502.jpg" alt="Photo 0502">
+      <div class="date-time">MAY 2, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="0503.jpg" alt="Photo 0503">
+      <div class="date-time">MAY 3, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="0522.jpg" alt="Photo 0522">
+      <div class="date-time">MAY 22, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="0609.jpg" alt="Photo 0609">
+      <div class="date-time">JUN 9, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="0629.jpg" alt="Photo 0629">
+      <div class="date-time">JUN 29, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="06292.jpg" alt="Photo 06292">
+      <div class="date-time">JUN 29, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="1.jpg" alt="Photo 1">
+      <div class="date-time">AUG 17, 2024</div> <!-- 날짜 위치는 사진 아래로 이동 -->
+    </div>
+    <div class="gallery-item">
+      <img src="2.jpg" alt="Photo 2">
+      <div class="date-time">NOV 21, 2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="3.jpg" alt="Photo 3">
+      <div class="date-time">NOV 24, 2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="4.jpg" alt="Photo 4">
+      <div class="date-time">DEC 1, 2024</div>
+    </div>
+    <div class="gallery-item">
+        <img src="5.jpg" alt="Photo 5">
+        <div class="date-time">DEC 5, 2024</div>
+    </div>
+    <div class="gallery-item">
+        <img src="6.jpg" alt="Photo 6">
+        <div class="date-time">DEC 6, 2024</div>
+    </div>
+    <div class="gallery-item">
+        <img src="7.jpg" alt="Photo 7">
+        <div class="date-time">DEC 7, 2024</div>
+    </div>
+  </div>
+
+  <!-- FAVS 영역 -->
+  <div class="gallery-container favs-gallery" id="favs">
+    <!-- 여기에 FAVS 갤러리 사진들 추가 -->
+  </div>
+
+  <!-- ABOUT 영역 -->
+  <div class="about" id="about">
+    <!-- 여기에 ABOUT 내용 추가 -->
+  </div>
+
+  <script>
+    function showSection(section) {
+      // 모든 섹션 숨기기
+      document.getElementById('recent').style.display = 'none';
+      document.getElementById('favs').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      
+      // 클릭한 섹션만 보이기
+      document.getElementById(section).style.display = 'block';
+    }
+
+    // 초기 화면에서는 RECENT가 보이도록 설정
+    showSection('recent');
+  </script>
+
+</body>
+</html>
+
